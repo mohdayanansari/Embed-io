@@ -1,5 +1,3 @@
-import Banner from '@/layouts/Header/Banner';
-import Header from '@/layouts/Header/Header';
 import '../../styles/Globals.scss';
 import '../../styles/Tailwind.css';
 
@@ -15,11 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="mx-auto max-w-7xl">
-        <Header />
-        <Banner />
-        {children}
-      </body>
+      <body className="">{children}</body>
     </html>
   );
 }
