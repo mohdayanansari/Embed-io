@@ -40,10 +40,10 @@ const PostPage = async ({ params: { slug } }: Props) => {
 
   //   console.log('SINGLE POST:::😲::', post);
   return (
-    <article className="px-10 pb-28">
-      <section className="space-y-2 text-white border border-app1">
+    <article className="px-[150px] pb-28">
+      <section className="space-y-2 text-white drop-shadow-2xl">
         <div className="relative flex flex-col justify-between min-h-56 md:flex-row ">
-          <div className="absolute top-0 w-full h-full p-10 opacity-10 blur-sm">
+          <div className="absolute top-0 w-full h-full p-10 opacity-10 blur-sm ">
             <Image
               className="object-cover object-center mx-auto"
               src={urlFor(post.mainImage).url()}
@@ -51,10 +51,12 @@ const PostPage = async ({ params: { slug } }: Props) => {
               fill
             />
           </div>
-          <section className="w-full p-5 bg-app1">
+          <section className="w-full p-5 bg-app1 rounded-3xl">
             <div className="flex flex-col justify-between md:flex-row gap-y-5">
               <div>
-                <h1 className="text-4xl font-extrabold">{post.title}</h1>
+                <h1 className="text-4xl font-extrabold capitalize">
+                  {post.title}
+                </h1>
                 <p>
                   {new Date(post._createdAt).toLocaleDateString('en-IN', {
                     day: 'numeric',
@@ -64,7 +66,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
                 </p>
               </div>
               {/* author info */}
-              <div className="flex items-center space-x-2 ">
+              <div className="flex items-center justify-end space-x-2 ">
                 <Image
                   className="rounded-full"
                   src={urlFor(post.author.image).url()}
@@ -72,7 +74,7 @@ const PostPage = async ({ params: { slug } }: Props) => {
                   height={40}
                   width={40}
                 />
-                <div className="w-64">
+                <div className="">
                   <h3 className="text-lg font-bold">{post.author.name}</h3>
                   <div>{/* Author Bio */}</div>
                 </div>
