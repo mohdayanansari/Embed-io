@@ -19,15 +19,15 @@ const BlogList = ({ posts }: Props) => {
               key={post._id}
               route={`/post/${post.slug.current}`}
             >
-              <div className="flex flex-col p-2 cursor-pointer group rounded-3xl bg-slate-50 drop-shadow-xl h-[400px]">
-                <div className="relative w-full transition-transform duration-200 ease-out h-[300px] drop-shadow-xl group-hover:scale-105 rounded-3xl">
+              <div className="relative flex flex-col  cursor-pointer group bg-transparent drop-shadow-xl h-[500px] text-white">
+                <div className="relative w-full transition-transform duration-200 ease-out h-[250px] drop-shadow-xl group-hover:scale-105 ">
                   <Image
-                    className="object-cover object-left rounded-3xl"
+                    className="object-cover object-left "
                     alt={post.author.name}
                     src={urlFor(post.mainImage).url()}
                     fill
                   />
-                  <div className="absolute bottom-0 flex justify-between w-full p-5 text-white bg-black rounded-3xl bg-opacity-20 backdrop-blur-lg drop-shadow-lg ">
+                  <div className="absolute bottom-0 flex justify-between w-full p-5 text-white bg-black bg-opacity-20 backdrop-blur-lg drop-shadow-lg ">
                     <div>
                       <p className="font-bold">{post.title}</p>
 
@@ -53,17 +53,20 @@ const BlogList = ({ posts }: Props) => {
                   </div>
                 </div>
 
-                <div className="flex-1 px-5 mt-5">
-                  <p className="text-lg font-bold underline">{post.title}</p>
-                  <div className="text-gray-500 line-clamp-2">
-                    {post.description}...
+                <div className="flex flex-col items-start justify-between flex-1 w-full mt-5">
+                  <div className="flex flex-col w-full gap-y-[20px]">
+                    <h2 className="text-3xl font-semibold underline capitalize">
+                      {post.title}
+                    </h2>
+                    <div className="text-gray-500 line-clamp-2">
+                      {post.description}...
+                    </div>
                   </div>
+                  <p className="flex items-center mt-5 font-bold group-hover:underline">
+                    Read Post
+                    <ArrowUpRightIcon className="w-4 h-4 ml-2" />
+                  </p>
                 </div>
-
-                <p className="flex items-center px-5 mt-5 font-bold group-hover:underline">
-                  Read Post
-                  <ArrowUpRightIcon className="w-4 h-4 ml-2" />
-                </p>
               </div>
             </ClientSideRoute>
           );

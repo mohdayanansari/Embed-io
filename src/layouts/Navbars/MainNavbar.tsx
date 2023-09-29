@@ -3,12 +3,12 @@ import Link from 'next/link';
 
 const MainNavbar = () => {
   return (
-    <nav className="flex justify-between w-full h-[80px] drop-shadow-xl bg-white items-center px-[150px]">
+    <nav className="flex justify-between w-full h-[80px] drop-shadow-xl bg-transparent items-center px-[150px]">
       <div>
         <Image src="/logosmm.png" alt="" width={60} height={60} />
       </div>
-      <div className="flex justify-center w-full">
-        <ul className="flex gap-10">
+      <div className="flex justify-center flex-1 ">
+        <ul className="flex gap-10 text-white text-[18px]">
           {links.map((link, index) => {
             return (
               <Link key={index} href={`${link.link}`}>
@@ -31,7 +31,7 @@ const links = [
     link: '/post',
   },
   {
-    title: 'Projects',
+    title: 'Docs',
     link: '/projects',
   },
   {

@@ -6,6 +6,11 @@ module.exports = {
       colors: {
         app1: '#634780',
         app2: '#e8d5f5',
+        dark: '#141619',
+      },
+      backgroundImage: {
+        'hero-pattern': "url('/imgs/1.png')",
+        // 'footer-texture': "url('/img/footer-texture.png')",
       },
     },
   },

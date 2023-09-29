@@ -1,3 +1,4 @@
+import { YouTubePreview } from '@/components/YouTubePreview';
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
@@ -55,6 +56,11 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'youtubeUrl',
+      type: 'url',
+      title: 'YouTube Video URL',
+    }),
   ],
 
   preview: {
@@ -62,10 +68,14 @@ export default defineType({
       title: 'title',
       author: 'author.name',
       media: 'mainImage',
+      url: 'youtubeUrl',
     },
     prepare(selection) {
       const { author } = selection;
       return { ...selection, subtitle: author && `by ${author}` };
     },
+  },
+  components: {
+    preview: YouTubePreview,
   },
 });

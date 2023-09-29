@@ -1,13 +1,10 @@
-import Header from '@/layouts/Header/Header';
-
 export default function PostLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <section className="">
-      <Header />
+    <section className="bg-dark">
       {/* <Banner /> */}
       {children}
     </section>
